@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/new-customer', [CustomerController::class, 'store']);
-Route::post('/new-account/{customer}', [AccountsController::class, 'store']);
-Route::get('/balance/{account}', [AccountsController::class, 'balance']);
-Route::get('/account-history/{account}', [AccountsController::class, 'history']);
-Route::post('/transfer-amount', [AccountsController::class, 'transferAmounts']);
+Route::post('/new-account/{customer}', [AccountsController::class, 'store'])->name('new.account');
+Route::get('/balance/{account}', [AccountsController::class, 'balance'])->name('account.balance');
+Route::get('/account-history/{account}', [AccountsController::class, 'history'])->name('account.history');
+Route::post('/transfer-amount', [AccountsController::class, 'transferAmounts'])->name('amount.transfer');

@@ -10,4 +10,9 @@ class AccountHistory extends Model
     use HasFactory;
 
     protected $fillable = ['description', 'amount', 'balance'];
+
+    protected $casts = [
+        'amount' => 'double',
+        'balance' => 'double',
+    ];
 }
